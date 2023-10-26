@@ -24,12 +24,124 @@
             </div>
         </div>
     </header>
+    
     <main class="main">
 
+        <section class="total">
+            <div class="total-limit-block">
+                <div class="total-limit-wrap">
+
+                    <div class="total-eaten">
+                        <div class="total-eaten__header">
+                            <h3>Съедено</h3>
+                        </div>
+                        <div class="total-eaten__info">
+                            <p>
+                                <span class="total__number">0</span> ккал
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="limit">
+                        <div class="limit__header">
+                            <h3>Цель</h3>
+                        </div>
+                        <div class="limit__info">
+                            <p>
+                                <span class="limit__number">2000</span> ккал
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="limit-btn-wrap">
+                    <button class="limit-btn">
+                        Настроить цель
+                    </button>
+                </div>
+            </div>
+            
+            <div class="diagram-wrap">
+                Placeholder
+            </div>
+        </section>
+
+        <section class="products">
+            <div class="prod-wrapper">
+                
+                <div class="prod-manage-panel">
+                    <div class="prod-manage-panel__h2-wrap">
+                        <h2 class="prod-manage-panel__h2">
+                            Управляйте списком продуктов
+                        </h2>
+                    </div>
+                    <div class="prod-manage-panel__btns-wrap">
+                        <button class="prod-manage-panel__btn">Удалить все</button>
+                        <button class="prod-manage-panel__btn add-btn">Добавить новый</button>
+                    </div>
+                    <div class="add-prod-panel hidden">
+                        <form class="add-prod-panel__form">
+                            <div class="add-prod-panel__input-wrap">
+                                <input class="add-prod-panel__input"
+                                    type="text"
+                                    name="name"
+                                    placeholder="Название"
+                                    required
+                                >
+                                <input class="add-prod-panel__input"
+                                    type="text"
+                                    name="calories"
+                                    placeholder="Ккал"
+                                >
+                                <input class="add-prod-panel__input"
+                                    type="text"
+                                    name="protein"
+                                    placeholder="Белки"
+                                >
+                                <input class="add-prod-panel__input"
+                                    type="text"
+                                    name="fats"
+                                    placeholder="Жиры"
+                                >
+                                <input class="add-prod-panel__input"
+                                    type="text"
+                                    name="carbs"
+                                    placeholder="Углеводы"
+                                >
+                            </div>
+                            <div class="add-prod-panel__btn-wrap">
+                                <button class="add-new">Добавить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <table class="prod-table">
+                    <caption class="prod-table__h2">
+                        Список продуктов
+                    </caption>
+                    <thead class="prod-table__header">
+                        <tr>
+                            <th>Продукт</th>
+                            <th>Ккал</th>
+                            <th>Белки</th>
+                            <th>Жиры</th>
+                            <th>Углеводы</th>
+                        </tr>
+                    </thead>
+                    <tbody class="prod-table__body">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
+
     <footer class="footer">
 
     </footer>
+    <script type="module" src="./src/js/index.js"></script>
 </body>
 
 </html>

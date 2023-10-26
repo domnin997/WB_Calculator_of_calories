@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     height: 120px;
-    width: 80%;
+    width: 75%;
     padding: 15px;
     border-radius: 0 0 6px 6px;
     background-color: var(--background-dark);
@@ -20,4 +20,5 @@
 .header__h1 {
     font-size: 35px;
     font-weight: 700;
+    letter-spacing: 2px;
 }

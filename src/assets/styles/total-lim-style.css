@@ -1,0 +1,71 @@
+.total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-limit-block {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.total-limit-wrap {
+    height: 230px;
+    display: flex;
+    padding: 20px 10px 0 10px;
+    justify-content: space-around;
+    gap: 20px;
+    background-color: var(--background-white);
+    border-radius: 6px;
+    box-shadow: 0px 5px 18px 14px rgba(0, 0, 0, 0.05);
+}
+
+.total-eaten, .limit {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid var(--background-blue-hover);
+    border-radius: 6px;
+}
+
+.total-eaten__header, .total-eaten__info, .limit__header, .limit__info {
+    padding: 10px 5px 10px 5px;
+}
+
+.total-eaten__header, .limit__header {
+    background-color: var(--background-blue-hover);
+    font-size: 20px;
+    color: var(--text-white);
+}
+
+.total__number, .limit__number {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.limit-btn-wrap {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.limit-btn {
+    width: 80%;
+    height: 40px;
+    border-radius: 6px;
+    background-color: var(--background-blue);
+    transition-duration: 0.5s;
+    color: var(--text-white);
+}
+
+.limit-btn:hover {
+    background-color: var(--background-blue-hover);
+}
+
+.diagram-wrap {
+    width: 50%;
+}
