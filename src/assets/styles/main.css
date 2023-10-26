@@ -1,0 +1,13 @@
+@import url(./reset_styles.css);
+@import url(./variables.css);
+@import url(./header-style.css);
+
+html {
+    font-family: Roboto;
+}
+
+body {
+    background-color: var(--background-main);
+    display: flex;
+    justify-content: center;
+}
