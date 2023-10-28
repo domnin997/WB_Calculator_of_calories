@@ -55,9 +55,66 @@
 .prod-table {
     width: 100%;
     padding: 15px;
+    table-layout: fixed;
+    border-spacing: 0px;
+    border-collapse: collapse;
 }
 
+.prod-table__h2, .prod-table__header {
+    padding: 15px 0 15px 0;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ededed;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #e3e3e3a7;
+  }
+
+th {
+    padding: 15px 0 15px 0;
+}
+
+th:nth-child(1) {
+    width: 28%;
+}
+th:nth-child(2) {
+    width: 16%;
+}
+th:nth-child(3) {
+    width: 16%;
+}
+th:nth-child(4) {
+    width: 16%;
+}
+th:nth-child(5) {
+    width: 16%;
+}
+th:nth-child(6) {
+    width: 4%;
+}
+
+
 tb {
-    display: inline-block;
-    width: 25%;
+    height: 40px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    /* border: 1px solid black */
+}
+
+.delete-icon-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.del-icon-tb {
+    width: 10%;
+}
+
+.delete-icon:hover {
+    cursor: pointer;
 }
