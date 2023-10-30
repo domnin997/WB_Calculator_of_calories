@@ -53,6 +53,11 @@
                         </div>
                     </div>
 
+                    <div class="total-limit__warning hidden">
+                        <p class="total-limit__warning-text">
+                            Внимание! Дневной лимит превышен
+                        </p>
+                    </div>
                 </div>
                 
                 <div class="limit-btn-wrap">
@@ -137,11 +142,29 @@
                 </table>
             </div>
         </section>
+
     </main>
+
+    <div class="modal-overlay hidden">
+        <div class="modal-window">
+            <form class="set-target-form"
+                  action="">
+                <input class="calory-target-input"
+                       type="text"
+                       placeholder="Введите цель по калориям"
+                >
+                <button class="set-target-btn"
+                        type="submit">
+                            Установить цель
+                </button>
+            </form>
+        </div>
+    </div>
 
     <footer class="footer">
 
     </footer>
+
     <script type="module" src="./src/js/index.js"></script>
 </body>
 

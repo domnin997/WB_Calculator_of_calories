@@ -4,6 +4,8 @@ html {
     --background-blue: rgb(85, 102, 130);
     --background-white: rgb(240, 240, 240);
     --background-blue-hover: rgb(136, 156, 187);
+    --background-modal: rgba(71, 72, 66, 0.4);
+    
     --text-bright: rgb(221, 194, 175);
     --text-white: rgb(240, 240, 240);
 

@@ -1,7 +1,7 @@
 import manageAdd from './add-prod.js';
 import { createListItem } from './itemListCreator.js';
-import { getUserData } from './getUserData.js';
-import setEaten from './setCaloryTarget.js';
+import { getUserData, displayTarget } from './getUserData.js';
+import {setEatenNum, setNewTargetBtn, handleSetNewTarget, checkLimit} from './setCaloryTarget.js';
 import handleAddNew from './addProdHandler.js';
 
 let {userData, latestId} = getUserData();
@@ -11,13 +11,17 @@ window.latestId = latestId;
 
 userData.products.forEach((product) => {
     createListItem(product);
-    setEaten();
+    setEatenNum();
 });
 
 document.querySelector('.add-new').addEventListener('click', (e) => {
     e.preventDefault();
         handleAddNew();
-        setEaten();
+        checkLimit();
+        setEatenNum();
 });
 
+displayTarget();
+handleSetNewTarget();
+setNewTargetBtn();
 manageAdd();

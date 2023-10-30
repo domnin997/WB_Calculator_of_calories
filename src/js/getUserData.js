@@ -35,4 +35,24 @@ function getData () {
     }
 }
 
+function getTarge () {
+    if (localStorage.caloryTarget) {
+        return JSON.parse(localStorage.caloryTarget);
+    } else {
+        return 0;
+    }
+}
+
+function displTarget () {
+    const target = getTarge();
+    document.querySelector('.limit__number').innerText = target;
+}
+
+function setTarge (target) {
+    localStorage.setItem('caloryTarget', target);
+}
+
+export const getTarget = getTarge;
+export const setTarget = setTarge;
 export const getUserData = getData;
+export const displayTarget = displTarget;

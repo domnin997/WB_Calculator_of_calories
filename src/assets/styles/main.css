@@ -4,6 +4,7 @@
 @import url(./total-lim-style.css);
 @import url(./diagram-style.css);
 @import url(./products-table-style.css);
+@import url(./modal-style.css);
 
 html {
     font-family: Roboto;
@@ -12,6 +13,7 @@ html {
 body {
     background-color: var(--background-main);
     display: flex;
+    position: relative;
     gap: 40px;
     flex-direction: column;
     justify-content: center;

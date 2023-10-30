@@ -1,4 +1,4 @@
-import setEaten from "./setCaloryTarget.js";
+import {setEatenNum, checkLimit} from "./setCaloryTarget.js";
 
 function createElement (product) {
         
@@ -36,7 +36,8 @@ function createElement (product) {
             let startIndex = userData.products.findIndex((product) => product.id === +e.currentTarget.dataset.key);
                 userData.products.splice(startIndex, 1);
                 localStorage.setItem('userData', JSON.stringify(userData));
-                setEaten();
+                checkLimit();
+                setEatenNum();
                 e.currentTarget.remove();
         }
     })
