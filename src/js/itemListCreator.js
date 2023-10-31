@@ -3,6 +3,7 @@ import {setEatenNum, checkLimit} from "./setCaloryTarget.js";
 function createElement (product) {
         
     const newRow = document.createElement('tr');
+          newRow.classList.add('table-body__row');
 
     for (let key in product) {
         if (key !== 'id') {

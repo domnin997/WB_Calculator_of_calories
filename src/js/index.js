@@ -1,8 +1,8 @@
-import manageAdd from './add-prod.js';
 import { createListItem } from './itemListCreator.js';
 import { getUserData, displayTarget } from './getUserData.js';
 import {setEatenNum, setNewTargetBtn, handleSetNewTarget, checkLimit} from './setCaloryTarget.js';
 import handleAddNew from './addProdHandler.js';
+import handleSearchInput from './sortAndFilter.js';
 
 let {userData, latestId} = getUserData();
 
@@ -21,7 +21,8 @@ document.querySelector('.add-new').addEventListener('click', (e) => {
         setEatenNum();
 });
 
+document.querySelector('.prod-search_input').addEventListener('keyup', handleSearchInput);
+checkLimit();
 displayTarget();
 handleSetNewTarget();
 setNewTargetBtn();
-manageAdd();

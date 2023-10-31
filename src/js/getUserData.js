@@ -15,11 +15,11 @@ function getData () {
 
             const arrToSort = userData.products;
                   arrToSort.sort((a, b) => {
-                      b.id - a.id;
+                    return  b.id - a.id;
                   })
-
+  
             const latestId = arrToSort[0].id
-        
+            
             return {userData, latestId};
             
             }
@@ -27,7 +27,6 @@ function getData () {
     } else {
         
         const userData = {
-            target: 0,
             products: [],
         };
 

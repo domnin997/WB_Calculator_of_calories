@@ -53,13 +53,15 @@
                         </div>
                     </div>
 
-                    <div class="total-limit__warning hidden">
-                        <p class="total-limit__warning-text">
-                            Внимание! Дневной лимит превышен
-                        </p>
-                    </div>
+                    
                 </div>
                 
+                <div class="total-limit__warning hidden">
+                    <p class="total-limit__warning-text">
+                        Внимание! Дневной лимит превышен
+                    </p>
+                </div>
+
                 <div class="limit-btn-wrap">
                     <button class="limit-btn">
                         Настроить цель
@@ -68,7 +70,15 @@
             </div>
             
             <div class="diagram-wrap">
-                Placeholder
+                <div class="diagram-block">
+                    <svg class="pie" width="200" viewBox="0 0 50 50">
+                        <g>
+                          <circle r="15.9155" cx="50%" cy="50%"></circle>
+                          <circle r="15.9155" cx="50%" cy="50%"></circle>
+                          <circle r="15.9155" cx="50%" cy="50%"></circle>
+                        </g>
+                    </svg>
+                </div>
             </div>
         </section>
 
@@ -81,11 +91,13 @@
                             Управляйте списком продуктов
                         </h2>
                     </div>
-                    <div class="prod-manage-panel__btns-wrap">
-                        <button class="prod-manage-panel__btn">Удалить все</button>
-                        <button class="prod-manage-panel__btn add-btn">Добавить новый</button>
-                    </div>
-                    <div class="add-prod-panel hidden">
+                    <!-- <div class="prod-manage-panel__btns-block">
+                        <div class="prod-manage-panel__btns-wrap">
+                            <button class="prod-manage-panel__btn">Удалить все</button>
+                            <button class="prod-manage-panel__btn add-btn">Добавить новый</button>
+                        </div>
+                    </div> -->
+                    <div class="add-prod-panel">
                         <form class="add-prod-panel__form">
                             <div class="add-prod-panel__input-wrap">
                                 <input class="add-prod-panel__input"
@@ -121,25 +133,55 @@
                         </form>
                     </div>
                 </div>
+                <div class="products-list">
+                    
+                    <div class="products-list__header">
+                        <h2>
+                            Список продуктов
+                        </h2>
+                    </div>
 
-                <table class="prod-table">
-                    <caption class="prod-table__h2">
-                        Список продуктов
-                    </caption>
-                    <thead class="prod-table__header">
-                        <tr>
-                            <th>Продукт</th>
-                            <th>Ккал</th>
-                            <th>Белки</th>
-                            <th>Жиры</th>
-                            <th>Углеводы</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody class="prod-table__body">
+                    <div class="prod-search-wrap">
+                        <input class="prod-search_input" 
+                            type="text"
+                            placeholder="Найти по названию..."                    
+                        >
+                        <button class="delete-all-btn">
+                            Удалить все
+                        </button>
+                    </div>
+                    
+                    <table class="prod-table">
+                        <!-- <caption class="prod-table__h2">
+                            Список продуктов
+                        </caption> -->
+                        <thead class="prod-table__header">
+                            <tr>
+                                <th class="prod-table__th">Продукт</th>
+                                <th class="prod-table__th">
+                                    <span>Ккал</span>
+                                    <span class="prod-table__arrow">&uarr;</span>
+                                </th>
+                                <th class="prod-table__th">
+                                    <span>Белки</span>
+                                    <span class="prod-table__arrow">&uarr;</span>
+                                </th>
+                                <th class="prod-table__th">
+                                    <span>Жиры</span>
+                                    <span class="prod-table__arrow">&uarr;</span>
+                                </th>
+                                <th class="prod-table__th">
+                                    <span>Углеводы</span>
+                                    <span class="prod-table__arrow">&uarr;</span>
+                                </th>
+                                <th class="prod-table__th"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="prod-table__body">
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
