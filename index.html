@@ -27,79 +27,80 @@
     
     <main class="main">
 
-        <section class="total">
-            <div class="total-limit-block">
-                <div class="total-limit-wrap">
-
-                    <div class="limit">
-                        <div class="limit__header">
-                            <h3>Цель</h3>
-                        </div>
-                        <div class="limit__info">
-                            <p>
-                                <span class="limit__number">0</span> ккал
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="total-eaten">
-                        <div class="total-eaten__header">
-                            <h3>Съедено</h3>
-                        </div>
-                        <div class="total-eaten__info">
-                            <p>
-                                <span class="total__number">0</span> ккал
-                            </p>
-                        </div>
-                        <div class="total-eaten__by-type">
-                            <p class="total-eaten__subheader">Из них:</p>
-                            <ul>
-                                <li class="total-eaten__li">
-                                    <span>Белков</span>
-                                    <span class="total-eaten__li-gram">0 г</span>
-                                    <span class="total-eaten__li-percent">0 %</span>
-                                </li>
-                                <li class="total-eaten__li">
-                                    <span>Углеводов</span>
-                                    <span class="total-eaten__li-gram">0 г</span>
-                                    <span class="total-eaten__li-percent">0 %</span>
-                                </li>
-                                <li class="total-eaten__li">
-                                    <span>Жиров</span>
-                                    <span class="total-eaten__li-gram">0 г</span>
-                                    <span class="total-eaten__li-percent">0 %</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    
-                </div>
+        <section class="target-and-total">
+            <div class="limit-block">
                 
-                <div class="total-limit__warning hidden">
-                    <p class="total-limit__warning-text">
-                        Внимание! Дневной лимит превышен
-                    </p>
+                <div class="limit__header">
+                    <h3>Цель на сутки</h3>
                 </div>
-
-                <div class="limit-btn-wrap">
-                    <button class="limit-btn">
-                        Настроить цель
-                    </button>
+                <div class="limit__info-wrap">
+                    <div class="limit__info-warning-wrap">
+                    <div class="limit__info">
+                        <p class="limit__info-block">
+                            <span class="limit__number">0</span> ккал
+                        </p>
+                    </div>
+                    
+                    <div class="limit__warning hidden">
+                        <p class="limit__warning-text">
+                            Лимит превышен
+                        </p>
+                    </div>
                 </div>
+    
+                    <div class="limit-btn-wrap">
+                        <button class="limit-btn">
+                            Настроить цель
+                        </button>
+                    </div>
+                </div>
+                  
             </div>
             
-            <div class="diagram-wrap">
-                <div class="diagram-block">
-                    <svg class="pie" width="250" viewBox="0 0 45 45">
-                        <g>
-                          <circle r="15.9155" cx="50%" cy="50%"></circle>
-                          <circle r="15.9155" cx="50%" cy="50%"></circle>
-                          <circle r="15.9155" cx="50%" cy="50%"></circle>
-                          <circle r="15.9155" cx="50%" cy="50%"></circle>
-                        </g>
-                    </svg>
+            <div class="total">
+                <div class="total__header-container">
+                    <h3 class="total__header">Съедено за сутки</h3>
                 </div>
+                <div class="diagram-info-wrap">
+                    <div class="total__figures-block">
+                        <div class="total__calories-container">
+                            <p>
+                                <span class="total__calories-num">0</span> ккал
+                            </p>
+                        </div>
+                     
+                        <ul>
+                            <li class="total-eaten__li">
+                                <span>Белков</span>
+                                <span class="total-eaten__li-gram">0 г</span>
+                                <span class="total-eaten__li-percent">0 %</span>
+                            </li>
+                            <li class="total-eaten__li">
+                                <span>Углеводов</span>
+                                <span class="total-eaten__li-gram">0 г</span>
+                                <span class="total-eaten__li-percent">0 %</span>
+                            </li>
+                            <li class="total-eaten__li">
+                                <span>Жиров</span>
+                                <span class="total-eaten__li-gram">0 г</span>
+                                <span class="total-eaten__li-percent">0 %</span>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="diagram-block">
+                        <svg class="pie" width="250" viewBox="0 0 45 45">
+                            <g>
+                              <circle r="15.9155" cx="50%" cy="50%"></circle>
+                              <circle r="15.9155" cx="50%" cy="50%"></circle>
+                              <circle r="15.9155" cx="50%" cy="50%"></circle>
+                              <circle r="15.9155" cx="50%" cy="50%"></circle>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                
+
             </div>
         </section>
 

@@ -28,7 +28,6 @@ function update () {
     let protPercent = totalProteins/onePercent;
     let carbPercent = totalCarbs/onePercent;
     let fatPercent = totalFats/onePercent;
-    let totalPer = protPercent + carbPercent + fatPercent;
 
     const percentsArr = [protPercent, carbPercent, fatPercent];
 
@@ -47,7 +46,6 @@ function update () {
     circles[1].style.strokeDasharray = `0 ${protPercent} ${carbPercent} 100`;
     circles[2].style.strokeDasharray = `0 ${protPercent + carbPercent} ${fatPercent} 100`;
 
-    console.log(totalNutrients);
     if (totalNutrients === 0 || totalNutrients === undefined) {
         circles[3].style.strokeDasharray = `100 100`;
     }

@@ -15,7 +15,7 @@ function setEaten () {
     
     const totalEaten = calcTotalEaten();
 
-    document.querySelector('.total__number').innerText = totalEaten;
+    document.querySelector('.total__calories-num').innerText = totalEaten;
 
 };
 
@@ -40,9 +40,11 @@ function checkLim () {
     const totalEaten = calcTotalEaten();
     
     if (target < totalEaten) {
-        document.querySelector('.total-limit__warning').classList.remove('hidden');
+        document.querySelector('.limit__warning').classList.remove('hidden');
+        document.querySelector('.limit-block').classList.add('limit-exceeded');
     } else {
-        document.querySelector('.total-limit__warning').classList.add('hidden');
+        document.querySelector('.limit__warning').classList.add('hidden');
+        document.querySelector('.limit-block').classList.remove('limit-exceeded');
     }
 }
 

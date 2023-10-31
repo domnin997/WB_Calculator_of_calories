@@ -1,30 +1,43 @@
-.total {
+.target-and-total {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    gap: 45px;
 }
 
-.total-limit-block {
-    width: 50%;
-    padding: 20px 0 20px 0;
+.limit-block {
+    width: 30%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     background-color: var(--background-white);
     /* background-color: var(--background-yellow); */
-    border-radius: 6px;
+    border-radius: 8px 8px 6px 6px;
     box-shadow: 0px 5px 18px 14px rgba(0, 0, 0, 0.05);
 }
 
-.total-limit-wrap {
-    height: auto;
+.limit__header {
     display: flex;
-    padding: 0 10px 0 10px;
-    justify-content: space-around;
-    gap: 20px;
-    /* background-color: var(--background-white);
-    border-radius: 6px;
-    box-shadow: 0px 5px 18px 14px rgba(0, 0, 0, 0.05); */
+    justify-content: center;
+    height: 40px;
+    background-color: var(--background-blue-hover);
+    color: var(--text-white);
+    font-size: 20px;
+    border-radius: 6px 6px 0 0;
+}
+
+.limit__warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.limit__warning-text {
+    height: 40px;
+    width: 70%;
+    border-bottom: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .total-eaten, .limit {
@@ -38,7 +51,7 @@
     border-radius: 6px;
 }
 
-.total-eaten__header, .total-eaten__info, .limit__header, .limit__info {
+.total-eaten__header, .total-eaten__info, .limit__header {
     padding: 10px 5px 10px 5px;
 }
 
@@ -48,44 +61,7 @@
     color: var(--text-white);
 }
 
-.total-eaten__by-type {
-    padding: 0 10px 15px 10px;
-}
-
-.total-eaten__subheader {
-    text-align: left;
-}
-
-.total-eaten__li {
-    text-align: left;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-
-.total-eaten__li:before {
-    content: '';
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: blue;
-}
-
-.total-eaten__li:nth-of-type(1):before {
-    background-color: var(--diagram-proteins);
-}
-
-.total-eaten__li:nth-of-type(2):before {
-    background-color: var(--diagram-carbs);
-}
-
-.total-eaten__li:nth-of-type(3):before {
-    background-color: var(--diagram-fats);
-}
-
-.total__number, .limit__number {
+.limit__number {
     font-size: 18px;
     font-weight: 600;
 }
@@ -111,4 +87,46 @@
 
 .diagram-wrap {
     width: 50%;
+}
+
+.diagram-info-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.limit__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.limit-exceeded {
+    border: 2px solid red;
+}
+
+.limit__info-wrap {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 20px;
+}
+
+.limit__info-warning-wrap {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.limit__info-block {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 60%;
+    background-color: white;
+    border-radius: 6px;
 }

@@ -1,7 +1,9 @@
 import { createListItem } from "./itemListCreator.js";
 
 export default function handleAddNew () {
-    let newProdInfo = new FormData(document.querySelector('.add-prod-panel__form'));
+    const form = document.querySelector('.add-prod-panel__form');
+    
+    let newProdInfo = new FormData(form);
     let prodInfoArr = [];
     let newProd = {id: latestId + 1};
     
@@ -17,4 +19,6 @@ export default function handleAddNew () {
     createListItem(newProd);
 
     latestId++;
+
+    form.reset();
 }
