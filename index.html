@@ -68,8 +68,12 @@
                                 <span class="total__calories-num">0</span> ккал
                             </p>
                         </div>
-                     
-                        <ul>
+                        
+                        <div class="total__empty-notification hidden">
+                            <p>Список продуктов пуст</p>
+                        </div>
+
+                        <ul class="total-eaten__list">
                             <li class="total-eaten__li">
                                 <span>Белков</span>
                                 <span class="total-eaten__li-gram">0 г</span>
@@ -113,12 +117,7 @@
                             Управляйте списком продуктов
                         </h2>
                     </div>
-                    <!-- <div class="prod-manage-panel__btns-block">
-                        <div class="prod-manage-panel__btns-wrap">
-                            <button class="prod-manage-panel__btn">Удалить все</button>
-                            <button class="prod-manage-panel__btn add-btn">Добавить новый</button>
-                        </div>
-                    </div> -->
+                    
                     <div class="add-prod-panel">
                         <form class="add-prod-panel__form">
                             <div class="add-prod-panel__input-wrap">
@@ -128,25 +127,26 @@
                                     placeholder="Название"
                                     required
                                 >
-                                <input class="add-prod-panel__input"
+                                <input class="add-prod-panel__input digits-input"
                                     type="text"
                                     name="calories"
                                     placeholder="Ккал"
+                                    required
                                 >
-                                <input class="add-prod-panel__input"
+                                <input class="add-prod-panel__input digits-input"
                                     type="text"
                                     name="protein"
-                                    placeholder="Белки"
+                                    placeholder="Белки, г"
                                 >
-                                <input class="add-prod-panel__input"
+                                <input class="add-prod-panel__input digits-input"
                                     type="text"
                                     name="fats"
-                                    placeholder="Жиры"
+                                    placeholder="Жиры, г"
                                 >
-                                <input class="add-prod-panel__input"
+                                <input class="add-prod-panel__input digits-input"
                                     type="text"
                                     name="carbs"
-                                    placeholder="Углеводы"
+                                    placeholder="Углеводы, г"
                                 >
                             </div>
                             <div class="add-prod-panel__btn-wrap">
@@ -211,6 +211,7 @@
 
     <div class="modal-overlay hidden">
         <div class="modal-window">
+            <div class="modal-window__header"><span class="modal-window__close">&#10006;</span></div>
             <form class="set-target-form"
                   action="">
                 <input class="calory-target-input"
@@ -226,7 +227,8 @@
     </div>
 
     <footer class="footer">
-
+        <div class="footer__logo">Daily Eat</div>
+        <div class="footer__info">Создано в учебных целях. Дмитрий Домнин.</div>
     </footer>
 
     <script type="module" src="./src/js/index.js"></script>

@@ -11,7 +11,7 @@ export default function handleSearchInput (event) {
     
     } else {
         rows.forEach((row) => {
-            console.log(row.querySelector('tb').innerText);
+           
             if (row.querySelector('tb').innerText.match(regValue)) {
                 row.classList.remove('hidden');
             } else {
@@ -48,7 +48,7 @@ function sortTable (column, ascendSort) {
         
         let firstRow = a.querySelectorAll('tb')[column].textContent.toLowerCase(),
             secondRow = b.querySelectorAll('tb')[column].textContent.toLowerCase();
-        console.log(firstRow, secondRow)
+       
         return ascendSort ? (firstRow - secondRow) : (secondRow - firstRow);
        
     }).map(sortedRow => tableBody.append(sortedRow));

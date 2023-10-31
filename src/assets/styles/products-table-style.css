@@ -7,6 +7,7 @@
 }
 
 .prod-manage-panel {
+    
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -17,9 +18,10 @@
 }
 
 .prod-manage-panel__h2-wrap {
+    height: 40px;
     display: flex;
     justify-content: center;
-    padding: 15px 0px 15px 0;
+    align-items: center;
     background-color: var(--background-blue-hover);
     border-radius: 6px 6px 0 0;
     color: var(--text-white);

@@ -35,6 +35,15 @@
     border-radius: 6px;
 }
 
+.total__empty-notification {
+    width: 200px;
+    height: 40px;
+    border-bottom: 1px solid var(--diagram-empty);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .total__calories-num {
     font-size: 18px;
     font-weight: 600;

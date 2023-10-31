@@ -34,7 +34,7 @@ function getData () {
     }
 }
 
-function getTarge () {
+function getTarget () {
     if (localStorage.caloryTarget) {
         return JSON.parse(localStorage.caloryTarget);
     } else {
@@ -43,15 +43,15 @@ function getTarge () {
 }
 
 function displTarget () {
-    const target = getTarge();
+    const target = getTarget();
     document.querySelector('.limit__number').innerText = target;
 }
 
-function setTarge (target) {
+function setTarget (target) {
     localStorage.setItem('caloryTarget', target);
 }
 
-export const getTarget = getTarge;
-export const setTarget = setTarge;
+export const getTargetValue = getTarget;
+export const setTargetValue = setTarget;
 export const getUserData = getData;
 export const displayTarget = displTarget;

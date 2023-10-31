@@ -1,5 +1,8 @@
-import {setTarget, getTarget} from './getUserData.js';
+import {setTargetValue, getTargetValue} from './getUserData.js';
 
+const modalOverlay = document.querySelector('.modal-overlay'),
+      limitWarning = document.querySelector('.limit__warning'),
+      limitBlock = document.querySelector('.limit-block');
 
 function calcTotalEaten () {
     let totalEaten = 0;
@@ -23,30 +26,37 @@ function setTarget2 () {
     document.querySelector('.set-target-btn').addEventListener('click', (event) => {
         event.preventDefault();
         const newTarget = +document.querySelector('.calory-target-input').value;
-        setTarget(newTarget);
+        setTargetValue(newTarget);
         document.querySelector('.limit__number').innerText = newTarget;
-        document.querySelector('.modal-overlay').classList.add('hidden');
+        modalOverlay.classList.add('hidden');
+        checkLim();
     })
 }
 
 function handleClick () {
     document.querySelector('.limit-btn').addEventListener('click', () => {
-        document.querySelector('.modal-overlay').classList.remove('hidden');
+        modalOverlay.classList.remove('hidden');
     })
 }
 
 function checkLim () {
-    const target = getTarget();
+    const target = getTargetValue();
     const totalEaten = calcTotalEaten();
     
     if (target < totalEaten) {
-        document.querySelector('.limit__warning').classList.remove('hidden');
-        document.querySelector('.limit-block').classList.add('limit-exceeded');
+        limitWarning.classList.remove('hidden');
+        limitBlock.classList.add('limit-exceeded');
     } else {
-        document.querySelector('.limit__warning').classList.add('hidden');
-        document.querySelector('.limit-block').classList.remove('limit-exceeded');
+        limitWarning.classList.add('hidden');
+        limitBlock.classList.remove('limit-exceeded');
     }
 }
+
+modalOverlay.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal-window__close') || e.target.classList.contains('modal-overlay')) {
+        modalOverlay.classList.add('hidden');
+    }
+})
 
 export const checkLimit = checkLim;
 export const handleSetNewTarget = handleClick;

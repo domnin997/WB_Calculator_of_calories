@@ -5,14 +5,19 @@
 @import url(./totalStyle.css);
 @import url(./diagram-style.css);
 @import url(./products-table-style.css);
-@import url(./modal-style.css);
+@import url(./modalStyle.css);
+@import url(./footerStyle.css);
 
 html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: Roboto;
+    background-color: var(--background-main);
 }
 
 body {
-    background-color: var(--background-main);
+    width: 75%;
     display: flex;
     position: relative;
     gap: 40px;
@@ -22,7 +27,6 @@ body {
 }
 
 .main {
-    width: 75%;
     display: flex;
     flex-direction: column;
     gap: 60px;
