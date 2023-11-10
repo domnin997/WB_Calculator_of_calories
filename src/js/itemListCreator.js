@@ -1,5 +1,5 @@
 import {setEatenNum, checkLimit} from "./setCaloryTarget.js";
-import { updDetails } from "./diagram.js";
+import updDiagramField from "./diagram.js";
 
 function createElement (product) {
         
@@ -40,7 +40,7 @@ function createElement (product) {
                 localStorage.setItem('userData', JSON.stringify(userData));
                 checkLimit();
                 setEatenNum();
-                updDetails();
+                updDiagramField();
                 e.currentTarget.remove();
         }
     })

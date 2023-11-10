@@ -1,10 +1,10 @@
 @import url(./reset_styles.css);
 @import url(./variables.css);
-@import url(./header-style.css);
-@import url(./total-lim-style.css);
+@import url(./headerStyle.css);
+@import url(./totalLimStyle.css);
 @import url(./totalStyle.css);
-@import url(./diagram-style.css);
-@import url(./products-table-style.css);
+@import url(./diagramStyle.css);
+@import url(./prodTableStyle.css);
 @import url(./modalStyle.css);
 @import url(./footerStyle.css);
 

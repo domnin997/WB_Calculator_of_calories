@@ -1,4 +1,5 @@
 import { createListItem } from "./itemListCreator.js";
+import makeNumFormat from "./makeNumFomat.js";
 
 export default function handleAddNew () {
     const form = document.querySelector('.add-prod-panel__form');
@@ -31,16 +32,5 @@ export default function handleAddNew () {
 const digitsInputs = document.querySelectorAll('.digits-input');
 
 digitsInputs.forEach((input) => {
-    input.addEventListener(('input'), () => {
-        if (!input.value) {
-            return;
-        
-        } else {
-            input.value = input.value.replace(/[^\d,.]/g,'');
-            input.value = input.value.replace(/,/g, ".");
-            if (input.value.match(/\./g).length > 1) {
-                input.value = input.value.substr(0, input.value.lastIndexOf("."));
-            }
-        } 
-    })
+    input.addEventListener(('input'), () => {makeNumFormat(input)});
 })

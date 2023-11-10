@@ -7,11 +7,9 @@
 }
 
 .prod-manage-panel {
-    
     display: flex;
     flex-direction: column;
     gap: 15px;
-    /* border-bottom: 1px solid var(--background-blue-hover); */
     background-color: var(--background-white);
     border-radius: 8px;
     box-shadow: 0px 5px 18px 14px rgba(0, 0, 0, 0.05);
@@ -106,9 +104,9 @@
     padding: 15px 0 15px 0;
     display: flex;
     justify-content: center;
-    background-color: var(--background-dark);
+    background-color: var(--background-blue-hover);
     font-size: var(--h2-font-size);
-    color: var(--text-bright);
+    color: var(--text-white);
     border-radius: 6px 6px 0 0;
 }
 
@@ -116,7 +114,7 @@
     display: flex;
     gap: 10px;
     justify-content: center;
-    background-color: var(--background-dark);
+    background-color: var(--background-blue-hover);
 }
 
 .prod-search_input {
@@ -129,8 +127,14 @@
 
 .delete-all-btn {
     width: 20%;
-    background-color: var(--background-blue-hover);
+    background-color: var(--background-blue);
+    color: var(--text-white);
     border-radius: 6px;
+    transition-duration: 0.4s;
+}
+
+.delete-all-btn:hover {
+    color: var(--warning-red);
 }
 
 .prod-table {
@@ -146,27 +150,28 @@
 }
 
 .prod-table__header {
-    background-color: var(--background-dark);
-    color: var(--text-bright);
+    background-color: var(--background-blue-hover);
+    color: var(--text-white);
 }
 
 .prod-table__arrow {
     display: inline-block;
     justify-content: center;
     align-items: center;
-    color: var(--text-bright);
+    color: var(--text-white);
     font-size: 16px;
     font-weight: 700;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 1px solid var(--text-bright);
+    border: 1px solid var(--text-white);
     transition-duration: 0.3s;
 }
 
 .active {
-    color: var(--background-blue-hover);
-    border-color: var(--background-blue-hover);
+    color: rgb(255, 128, 0);
+    border-color: rgb(255, 128, 0);
+    background-color: var(--background-blue);
 }
 
 .ascend {
@@ -213,7 +218,6 @@ tb {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    /* border: 1px solid black */
 }
 
 .delete-icon-container {

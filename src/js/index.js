@@ -3,7 +3,8 @@ import { getUserData, displayTarget } from './getUserData.js';
 import {setEatenNum, setNewTargetBtn, handleSetNewTarget, checkLimit} from './setCaloryTarget.js';
 import handleAddNew from './addProdHandler.js';
 import handleSearchInput from './sortAndFilter.js';
-import { updDetails } from './diagram.js';
+import  updDiagramField  from './diagram.js';
+import handleDeleteAllBtn from './deleteAllBtn.js';
 
 let {userData, latestId} = getUserData();
 
@@ -13,20 +14,21 @@ window.latestId = latestId;
 userData.products.forEach((product) => {
     createListItem(product);
     setEatenNum();
-    updDetails();
+    updDiagramField();
 });
 
-document.querySelector('.add-new').addEventListener('click', (e) => {
+document.querySelector('.add-prod-panel__form').addEventListener('submit', (e) => {
     e.preventDefault();
         handleAddNew();
         checkLimit();
         setEatenNum();
-        updDetails();
-});
+        updDiagramField();
+})
 
 document.querySelector('.prod-search_input').addEventListener('keyup', handleSearchInput);
+handleDeleteAllBtn();
 checkLimit();
 displayTarget();
 handleSetNewTarget();
 setNewTargetBtn();
-updDetails();
+updDiagramField();

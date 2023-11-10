@@ -17,4 +17,6 @@ html {
     --diagram-carbs: rgb(135, 79, 255);
     --diagram-fats: rgb(102, 255, 179);
     --diagram-empty: rgb(35, 92, 64);
+
+    --warning-red: rgb(212, 54, 54);
 }

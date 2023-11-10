@@ -1,4 +1,5 @@
 import {setTargetValue, getTargetValue} from './getUserData.js';
+import makeNumFormat from './makeNumFomat.js';
 
 const modalOverlay = document.querySelector('.modal-overlay'),
       limitWarning = document.querySelector('.limit__warning'),
@@ -21,6 +22,9 @@ function setEaten () {
     document.querySelector('.total__calories-num').innerText = totalEaten;
 
 };
+
+const inputField = document.querySelector('.calory-target-input');
+inputField.addEventListener('input', (e) => {makeNumFormat(inputField)});
 
 function setTarget2 () {
     document.querySelector('.set-target-btn').addEventListener('click', (event) => {

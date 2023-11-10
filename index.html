@@ -17,7 +17,7 @@
     <header class="header">
         <div class="header__wrapper">
             <h1 class="header__h1">
-                <span>C</span>alcul<span>E</span>at
+                <span>D</span>aily<span>E</span>at
             </h1>
             <div class="header__info">
                 Приложение для подсчета калорий
@@ -119,13 +119,14 @@
                     </div>
                     
                     <div class="add-prod-panel">
-                        <form class="add-prod-panel__form">
+                        <form class="add-prod-panel__form"
+                              id="add-prod-form">
                             <div class="add-prod-panel__input-wrap">
                                 <input class="add-prod-panel__input"
-                                    type="text"
-                                    name="name"
-                                    placeholder="Название"
-                                    required
+                                       type="text"
+                                       name="name"
+                                       placeholder="Название"
+                                       required
                                 >
                                 <input class="add-prod-panel__input digits-input"
                                     type="text"
@@ -150,7 +151,10 @@
                                 >
                             </div>
                             <div class="add-prod-panel__btn-wrap">
-                                <button class="add-new">Добавить</button>
+                                <button form="add-prod-form"
+                                        class="add-new"
+                                        type="submit"
+                                        >Добавить</button>
                             </div>
                         </form>
                     </div>
@@ -174,9 +178,7 @@
                     </div>
                     
                     <table class="prod-table">
-                        <!-- <caption class="prod-table__h2">
-                            Список продуктов
-                        </caption> -->
+                        
                         <thead class="prod-table__header">
                             <tr>
                                 <th class="prod-table__th">Продукт</th>
