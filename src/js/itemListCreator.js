@@ -1,7 +1,8 @@
 import {setEatenNum, checkLimit} from "./setCaloryTarget.js";
 import updDiagramField from "./diagram.js";
+import {getUserData} from "./getUserData.js";
 
-function createElement (product) {
+export const createListItem = function (product) {
         
     const newRow = document.createElement('tr');
           newRow.classList.add('table-body__row');
@@ -13,7 +14,7 @@ function createElement (product) {
                     newRow.append(newTb);
         }  
     }
-  
+
     const delIcon = document.createElement('tb');
           delIcon.classList.add('del-icon-tb');
           delIcon.innerHTML = `
@@ -35,17 +36,19 @@ function createElement (product) {
     newRow.addEventListener('click', (e) => {
         
         if (e.target.classList.contains('delete-icon')) {
-            let startIndex = userData.products.findIndex((product) => product.id === +e.currentTarget.dataset.key);
+            const userData = getUserData();
+            let startIndex = userData.products.findIndex((product) => product.id === e.currentTarget.dataset.key);
+        
                 userData.products.splice(startIndex, 1);
                 localStorage.setItem('userData', JSON.stringify(userData));
+                
                 checkLimit();
                 setEatenNum();
-                updDiagramField();
+                updDiagramField(userData);
+                
                 e.currentTarget.remove();
         }
     })
 
     document.querySelector('.prod-table__body').append(newRow);
 }
-
-export const createListItem = createElement;

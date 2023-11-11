@@ -1,4 +1,4 @@
-export default function updDiagramField () {
+export default function updDiagramField (userData) {
 
 const circles = document.querySelectorAll('circle'),
       gramConts = document.querySelectorAll('.total-eaten__li-gram'),
@@ -54,7 +54,6 @@ const circles = document.querySelectorAll('circle'),
     if (totalNutrients === 0 || totalNutrients === undefined) {
         circles[3].style.strokeDasharray = `100 100`;
     }
-
 
     function makeShortNum (element) {
         let displayedEl;

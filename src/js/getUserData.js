@@ -1,28 +1,9 @@
-function getData () {
+export const getUserData = function () {
     
     if (localStorage.userData) {
-
+        
         const userData = JSON.parse(localStorage.userData);
-
-        if (userData.products.length === 0) {
-            
-            return {
-                userData,
-                latestId: 0
-            }
-
-        } else if (userData.products.length > 0) {
-
-            const arrToSort = userData.products;
-                  arrToSort.sort((a, b) => {
-                    return  b.id - a.id;
-                  })
-  
-            const latestId = arrToSort[0].id
-            
-            return {userData, latestId};
-            
-            }
+        return userData;   
 
     } else {
         
@@ -30,11 +11,15 @@ function getData () {
             products: [],
         };
 
-        return {userData, latestId: 0}
+        return userData;
     }
 }
 
-function getTarget () {
+export const setUserData = function (userData) {
+    localStorage.setItem('userData', JSON.stringify(userData));
+}
+
+export const getTargetValue = function () {
     if (localStorage.caloryTarget) {
         return JSON.parse(localStorage.caloryTarget);
     } else {
@@ -42,16 +27,11 @@ function getTarget () {
     }
 }
 
-function displTarget () {
-    const target = getTarget();
+export const displayTarget = function () {
+    const target = getTargetValue();
     document.querySelector('.limit__number').innerText = target;
 }
 
-function setTarget (target) {
+export const setTargetValue = function (target) {
     localStorage.setItem('caloryTarget', target);
 }
-
-export const getTargetValue = getTarget;
-export const setTargetValue = setTarget;
-export const getUserData = getData;
-export const displayTarget = displTarget;

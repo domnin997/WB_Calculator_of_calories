@@ -1,4 +1,4 @@
-import {setTargetValue, getTargetValue} from './getUserData.js';
+import {setTargetValue, getTargetValue, getUserData} from './getUserData.js';
 import makeNumFormat from './makeNumFomat.js';
 
 const modalOverlay = document.querySelector('.modal-overlay'),
@@ -8,42 +8,47 @@ const modalOverlay = document.querySelector('.modal-overlay'),
 function calcTotalEaten () {
     let totalEaten = 0;
 
-    userData.products.forEach((prod) => {
-        totalEaten+= +prod.calories;
-    });
+    const userData = getUserData();
+          userData.products.forEach((prod) => {
+              totalEaten+= +prod.calories;
+          });
 
     return totalEaten;
 }
 
-function setEaten () {
+
+export const setEatenNum = function () {
     
     const totalEaten = calcTotalEaten();
-
     document.querySelector('.total__calories-num').innerText = totalEaten;
 
 };
 
 const inputField = document.querySelector('.calory-target-input');
-inputField.addEventListener('input', (e) => {makeNumFormat(inputField)});
+      inputField.addEventListener('input', () => {makeNumFormat(inputField)});
 
-function setTarget2 () {
+export const setNewTargetBtn = function () {
+    
     document.querySelector('.set-target-btn').addEventListener('click', (event) => {
         event.preventDefault();
         const newTarget = +document.querySelector('.calory-target-input').value;
+            
         setTargetValue(newTarget);
-        document.querySelector('.limit__number').innerText = newTarget;
-        modalOverlay.classList.add('hidden');
-        checkLim();
+            
+            document.querySelector('.limit__number').innerText = newTarget;
+            modalOverlay.classList.add('hidden');
+            
+            checkLimit();
     })
 }
 
-function handleClick () {
+export const handleSetNewTarget = function () {
     document.querySelector('.limit-btn').addEventListener('click', () => {
         modalOverlay.classList.remove('hidden');
     })
 }
 
-function checkLim () {
+export const checkLimit = function  () {
     const target = getTargetValue();
     const totalEaten = calcTotalEaten();
     
@@ -61,8 +66,3 @@ modalOverlay.addEventListener('click', (e) => {
         modalOverlay.classList.add('hidden');
     }
 })
-
-export const checkLimit = checkLim;
-export const handleSetNewTarget = handleClick;
-export const setNewTargetBtn = setTarget2;
-export const setEatenNum = setEaten;
