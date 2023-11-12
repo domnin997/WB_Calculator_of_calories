@@ -1,4 +1,4 @@
-export default function handleSearchInput (event) {
+export const handleSearchInput = function (event) {
     
     const rows = document.querySelector('.prod-table__body').querySelectorAll('tr');
     const searchValue = event.target.value.trim();
@@ -21,27 +21,33 @@ export default function handleSearchInput (event) {
     }
 }
 
-const tableHeaders = document.querySelectorAll('.prod-table__th'),
-      headerArrows = document.querySelectorAll('.prod-table__arrow'),
-      tableBody = document.querySelector('.prod-table__body');
+export const handleTableSort = function  () {
+  
+  const tableHeaders = document.querySelectorAll('.prod-table__th');
+  const headerArrows = document.querySelectorAll('.prod-table__arrow');
+  const tableBody = document.querySelector('.prod-table__body');
 
-    tableHeaders.forEach((header, index) => {  
+        tableHeaders.forEach((header, index) => {  
     
-        if (index !== 0 && index !== 5) {
-            let ascendSort = true;
+          if (index !== 0 && index !== 5) {
+              
+              let ascendSort = true;
         
-            const arrow = header.querySelector('.prod-table__arrow');
-            header.addEventListener('click', () => {
-                headerArrows.forEach((arrow) => {
-                    arrow.classList.remove('active');
-                });
-                arrow.classList.add('active');
-                arrow.classList.toggle('ascend', ascendSort);
-                ascendSort = arrow.classList.contains('ascend') ? false : true;
-                sortTable(index, ascendSort);
-            });
-        }
-    })
+              const arrow = header.querySelector('.prod-table__arrow');
+            
+              header.addEventListener('click', () => {
+                  headerArrows.forEach((arrow) => {
+                      arrow.classList.remove('active');
+                  });
+                
+                  arrow.classList.add('active');
+                  arrow.classList.toggle('ascend', ascendSort);
+                  ascendSort = arrow.classList.contains('ascend') ? false : true;
+                  
+                  sortTable(index, ascendSort);
+              });
+          }
+        })
 
     function sortTable (column, ascendSort) {
         Array.from(document.querySelectorAll('.table-body__row')).sort((a, b) => {
@@ -51,5 +57,6 @@ const tableHeaders = document.querySelectorAll('.prod-table__th'),
        
         return ascendSort ? (firstRow - secondRow) : (secondRow - firstRow);
        
-    }).map(sortedRow => tableBody.append(sortedRow));
+        }).map(sortedRow => tableBody.append(sortedRow));
+    }
 }

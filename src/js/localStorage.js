@@ -3,7 +3,7 @@ export const getUserData = function () {
     if (localStorage.userData) {
         
         const userData = JSON.parse(localStorage.userData);
-        return userData;   
+        return userData;  
 
     } else {
         

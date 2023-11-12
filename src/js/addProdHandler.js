@@ -1,6 +1,5 @@
-import { createListItem } from "./itemListCreator.js";
-import makeNumFormat from "./makeNumFomat.js";
-import { getUserData, setUserData } from "./getUserData.js";
+import { createListItem } from "./createListItem.js";
+import { getUserData, setUserData } from "./localStorage.js";
 import updDiagramField from "./diagram.js";
 
 export default function handleAddNew () {
@@ -30,8 +29,3 @@ export default function handleAddNew () {
     
           form.reset();
 }
-
-const digitsInputs = document.querySelectorAll('.digits-input');
-      digitsInputs.forEach((input) => {
-        input.addEventListener(('input'), () => {makeNumFormat(input)});
-      })

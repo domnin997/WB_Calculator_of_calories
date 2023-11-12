@@ -169,8 +169,8 @@
 }
 
 .active {
-    color: rgb(255, 128, 0);
-    border-color: rgb(255, 128, 0);
+    color: var(--arrows-orange);
+    border-color: var(--arrows-orange);
     background-color: var(--background-blue);
 }
 

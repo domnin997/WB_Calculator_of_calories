@@ -1,31 +1,43 @@
-import {createListItem} from './itemListCreator.js';
-import {getUserData, displayTarget} from './getUserData.js';
+import {createListItem} from './createListItem.js';
+import {getUserData, displayTarget} from './localStorage.js';
 import {setEatenNum, setNewTargetBtn, handleSetNewTarget, checkLimit} from './setCaloryTarget.js';
 import handleAddNew from './addProdHandler.js';
-import handleSearchInput from './sortAndFilter.js';
+import {handleSearchInput, handleTableSort} from './sortAndFilter.js';
 import updDiagramField  from './diagram.js';
 import handleDeleteAllBtn from './deleteAllBtn.js';
+import makeNumFormat from './makeNumFomat.js';
+
+const inputField = document.querySelector('.calory-target-input');
+const addProdForm = document.querySelector('.add-prod-panel__form');
+const prodSearchInput = document.querySelector('.prod-search_input');
+const digitsInputs = document.querySelectorAll('.digits-input');
 
 let userData = getUserData();
 
 userData.products.forEach((product) => {
     createListItem(product);
-    setEatenNum();
-    updDiagramField(userData);
 });
 
-document.querySelector('.add-prod-panel__form').addEventListener('submit', (e) => {
+prodSearchInput.addEventListener('keyup', handleSearchInput);
+
+inputField.addEventListener('input', () => {makeNumFormat(inputField)});
+
+digitsInputs.forEach((input) => {
+    input.addEventListener('input', () => {makeNumFormat(input)});
+})
+
+addProdForm.addEventListener('submit', (e) => {
     e.preventDefault();
         handleAddNew();
         checkLimit();
         setEatenNum();
 })
 
-document.querySelector('.prod-search_input').addEventListener('keyup', handleSearchInput);
-
+    handleSetNewTarget();
     handleDeleteAllBtn();
+    handleTableSort();   
+    setEatenNum();
     checkLimit();
     displayTarget();
-    handleSetNewTarget();
     setNewTargetBtn();
     updDiagramField(userData);
